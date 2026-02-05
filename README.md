@@ -4,13 +4,13 @@ An autoupdater for the rasperry pi pico 2 W.
 
 The target is the directory you wish to replace. 
 In many cases it will be:
-../<repo name>
+../repo name
 
 ## Use
 
-Import autoupdater. Then, use autoupdater.checkUpdates() or autoupdater.Update(<path to target>). checkUpdates() returns true or false depending on if there is an update, and Update(<path to target>) returns 0 or 1 depending on if the update has been succesful. 
+Import autoupdater. Then, use autoupdater.checkUpdates() or autoupdater.Update(target). checkUpdates() returns true or false depending on if there is an update, and Update(target) returns 0 or 1 depending on if the update has been succesful. 
 
-If using an SD card, call UpdateSD(<path to target>)
+If using an SD card, call UpdateSD(target)
 
 ## Setup instructions
 
