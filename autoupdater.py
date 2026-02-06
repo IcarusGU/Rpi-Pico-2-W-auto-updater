@@ -23,8 +23,8 @@ def getAPIurl(url):
     branch = parts[5]
     return f"https://api.github.com/repos/{user}/{repo}/git/trees/{branch}?recursive=1"
 
-def currentInstall():
-    line = getFirstLine("version.txt")
+def currentInstall(target):
+    line = getFirstLine(target + "version.txt")
     version = ''.join(char for char in line if char.isdigit())
     return version
 
@@ -60,8 +60,14 @@ def rm_rf(target):
     print(f"Deleted folder: {target}")
 
 #Main functions
-def checkUpdates():
-    if currentInstall() < newestVersion():
+def checkUpdates(targets):
+    currentInstalls = []
+
+    for target in range(len(targets)):
+        currentInstalls.append(currentInstall(target))
+    for install in currentInstalls:
+        
+    if currentInstall(targets) < newestVersion(targets):
         return True
     return False
 
